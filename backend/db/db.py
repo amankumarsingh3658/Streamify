@@ -1,0 +1,17 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from secret_keys import SecretKeys
+
+
+secret_keys = SecretKeys()
+
+engine = create_engine(secret_keys.POSTGRES_URL)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False , bind=engine)
+
+def get_db():
+    db = SessionLocal()
+
+    try:
+        yield db
+    finally:
+        db.close()

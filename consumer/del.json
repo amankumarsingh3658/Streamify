@@ -1,0 +1,59 @@
+{
+  "Messages": [
+    {
+      "MessageId": "1adcadd4-7e71-4fec-a93f-e3f6fdd07583",
+      "ReceiptHandle": "AQEBGNfkV5kDM6IqphLepgNrZ3kbh0pmkJCkRJUnDWVWko6aR2nBwbTUEqZaXygfewOJDu9XrvPKG+ojNi9pxjyGBaeiwCyIE0lI5LO6RHWO6wztxEc9ku98K+vSvW+mZPWbP2w/hyA1iu9eyaXCbIYcPMLJ/rEikP7XqFRR44GEljoQo56OehxiL2FVdCOe7ZOnpr/d2XNAQfQJG3SUJSIdqgNTMRvMMwqFl1+yZDHSsSgS9cBdMyWmc/2jdxm9twcNu5mz1QVEzciW3+zR0OI53MfQ9YDXLjHW6FWAYo9Jch+/pu3vxXXMoNeJ+Om+YuHUNrudJaiFycDNPQCV3POR1XwUONJkrOz8cb9M3advP5bPuE70ILDpm3wTmHnTVjkmush6nm5F7Od5X/3LVCOAhA==",
+      "MD5OfBody": "b78a9733dcc3f573096cff6f92bdb02d",
+      "Body": {
+        "Records": [
+          {
+            "eventVersion": "2.1",
+            "eventSource": "aws:s3",
+            "awsRegion": "ap-south-1",
+            "eventTime": "2026-03-24T06:39:58.946Z",
+            "eventName": "ObjectCreated:Put",
+            "userIdentity": {
+              "principalId": "A2OHHC0I33U23C"
+            },
+            "requestParameters": {
+              "sourceIPAddress": "14.195.211.249"
+            },
+            "responseElements": {
+              "x-amz-request-id": "SBJY6755ZB3611B9",
+              "x-amz-id-2": "+/JDBVPyvYandl3hxRyCgmoaU56Wo+2V9BWoOnl3cwEXZoVcpeU1veCBjEzMnS4OO08q//AQsyGIXVM4Ps64tDAtn3k3tWww"
+            },
+            "s3": {
+              "s3SchemaVersion": "1.0",
+              "configurationId": "RawVideosToSQS",
+              "bucket": {
+                "name": "raw-videos-441923768778-ap-south-1-an",
+                "ownerIdentity": {
+                  "principalId": "A2OHHC0I33U23C"
+                },
+                "arn": "arn:aws:s3:::raw-videos-441923768778-ap-south-1-an"
+              },
+              "object": {
+                "key": "videos/3195394-uhd_3840_2160_25fps.mp4",
+                "size": 13927646,
+                "eTag": "8296478d01debecf130dec5194810b0f",
+                "sequencer": "0069C231BD5F580E9B"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "ResponseMetadata": {
+    "RequestId": "be578a66-dbc5-5a2f-9064-e85ae40050c4",
+    "HTTPStatusCode": 200,
+    "HTTPHeaders": {
+      "x-amzn-requestid": "be578a66-dbc5-5a2f-9064-e85ae40050c4",
+      "date": "Tue, 24 Mar 2026 07:30:13 GMT",
+      "content-type": "application/x-amz-json-1.0",
+      "content-length": "1453",
+      "connection": "keep-alive"
+    },
+    "RetryAttempts": 0
+  }
+}
