@@ -131,30 +131,21 @@ After completion:
 
 # 🔄 Full Video Pipeline
 
-```
-Flutter App
-    ↓
-FastAPI Backend
-    ↓
-S3 Upload (Presigned URL)
-    ↓
-SQS Message
-    ↓
-Consumer Service
-    ↓
-ECS Task Spawned
-    ↓
-Transcoder Service
-    ↓
-FFmpeg Adaptive Transcoding
-    ↓
-Upload to S3
-    ↓
-Update PostgreSQL
-    ↓
-Redis Cache Invalidation
-    ↓
-CDN Delivery
+```mermaid
+flowchart LR
+    App["📱 Flutter App"] -->|login| Cognito["🔐 AWS Cognito"]
+    App -->|API + JWT| API["⚡ FastAPI Backend"]
+    API -->|pre-signed URL| App
+    App -->|upload video| Raw[("🪣 S3 raw videos")]
+    Raw -->|upload event| SQS["📨 SQS queue"]
+    SQS --> Consumer["🔁 Consumer Service"]
+    Consumer -->|start task| ECS["🐳 ECS Transcoder<br/>FFmpeg → DASH<br/>360p · 720p · 1080p"]
+    ECS -->|read| Raw
+    ECS -->|segments + manifest| Out[("🪣 S3 processed")]
+    ECS -->|status = completed| PG[("🐘 PostgreSQL")]
+    API <--> PG
+    API <--> Redis[("⚡ Redis cache")]
+    Out --> CDN["🌍 CDN"] -->|adaptive playback| App
 ```
 
 ---
